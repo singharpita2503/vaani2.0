@@ -1,0 +1,383 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Baloo 2', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  background: #000000;
+  color: #e8eef6;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  box-shadow: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.logo-emoji {
+  font-size: 1.6rem;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0d47a1;
+  letter-spacing: 1px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.language-toggle {
+  display: inline-flex;
+  padding: 0.15rem;
+  background: #e3f2fd;
+  border-radius: 999px;
+}
+
+.toggle-pill {
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: #1e88e5;
+  transition: all 0.2s ease;
+}
+
+.toggle-pill.active {
+  background: #42a5f5;
+  color: white;
+  box-shadow: 0 2px 4px rgba(66, 165, 245, 0.5);
+}
+
+.home-chip {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: #fff3e0;
+  color: #ef6c00;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  color: #e8eef6;
+  background: rgba(0,0,0,0.65);
+  position: relative;
+  z-index: 5;
+}
+
+.page-shell {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
+  padding: 1.5rem 1.75rem 1.75rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.home-shell {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  padding: 2rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.home-paper {
+  min-height: 640px;
+  padding: 3.1rem 3.2rem 8.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.home-title {
+  margin-top: 0;
+}
+
+.home-subtitle {
+  max-width: 520px;
+}
+
+.home-grid {
+  margin-top: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+  max-width: 860px;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0d47a1;
+}
+
+.page-subtitle {
+  margin: 0 0 1.2rem;
+  font-size: 0.95rem;
+  color: #546e7a;
+}
+
+.big-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.big-card-button {
+  border: none;
+  border-radius: 24px;
+  padding: 1.3rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: #263238;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.big-card-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+}
+
+.big-card-button:focus-visible {
+  outline: 4px solid rgba(66, 165, 245, 0.55);
+  outline-offset: 3px;
+}
+
+.big-card-button span {
+  font-size: 1.6rem;
+}
+
+.big-card-button.primary {
+  background: #ffcc80;
+  box-shadow: 0 8px 0 #ffa726;
+}
+
+.big-card-button.secondary {
+  background: #b2dfdb;
+  box-shadow: 0 8px 0 #26a69a;
+}
+
+.big-card-button.tertiary {
+  background: #c5cae9;
+  box-shadow: 0 8px 0 #5c6bc0;
+}
+
+.big-card-button.quaternary {
+  background: #ffe082;
+  box-shadow: 0 8px 0 #ffb300;
+}
+
+.big-card-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
+}
+
+.alphabet-container,
+.numbers-container,
+.practice-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pill-button {
+  border-radius: 999px;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #e3f2fd;
+  color: #1e88e5;
+}
+
+.pill-button:active {
+  transform: translateY(2px);
+}
+
+.small-label {
+  font-size: 0.8rem;
+  color: #607d8b;
+}
+
+.info-chip {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: #e1f5fe;
+  color: #0277bd;
+}
+
+.status-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.status-good {
+  color: #2e7d32;
+}
+
+.status-try {
+  color: #d84315;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.number-card {
+  min-width: 90px;
+  flex: 1;
+  background: #fff3e0;
+  border-radius: 18px;
+  padding: 0.7rem 0.8rem;
+  text-align: center;
+  box-shadow: 0 4px 0 #ffb74d;
+}
+
+.number-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ef6c00;
+}
+
+.number-objects {
+  font-size: 1.4rem;
+  margin-top: 0.3rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.practice-target-card {
+  border-radius: 18px;
+  background: #e8f5e9;
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.target-word {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.target-helper {
+  font-size: 0.85rem;
+  color: #2e7d32;
+}
+
+.practice-feedback {
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.muted {
+  color: #90a4ae;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .page-shell {
+    padding: 1.2rem 1.1rem 1.4rem;
+  }
+
+  .home-paper {
+    min-height: 560px;
+    padding: 2.2rem 1.4rem 7.2rem;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 520px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
